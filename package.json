@@ -5,16 +5,18 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server1.js"
+    "start": "nodemon server/server1.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/express-graphql": "^0.9.0",
     "@types/graphql": "^14.5.0",
     "@types/nodemon": "^1.19.1",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "express-graphql": "^0.12.0",
     "graphql": "^16.2.0",

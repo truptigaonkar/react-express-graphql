@@ -8,6 +8,7 @@ const {
   GraphQLInt,
   GraphQLNonNull,
 } = require("graphql");
+const cors = require( `cors` );
 const app = express();
 
 app.get("/", (req, res) => {
@@ -58,6 +59,7 @@ const schema = new GraphQLSchema({
   query: RootQueryType,
 });
 
+app.use( cors() );
 app.use(
     "/graphql",
     graphqlHTTP({
