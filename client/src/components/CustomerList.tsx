@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const CustomerList = () => {
-  const LAUNCHES_QUERY = `
+  const CUSTOMER_QUERY = `
   {
     customers {
       id
@@ -14,11 +14,11 @@ const CustomerList = () => {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query: LAUNCHES_QUERY }),
+    body: JSON.stringify({ query: CUSTOMER_QUERY }),
   };
 
   const [customers, setCustomers] = useState<any[]>([]);
-  // const [launches, setLaunches] = useState([]);
+  // const [custmers, setCustomers] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:2000/graphql", requestOptions)
@@ -30,10 +30,10 @@ const CustomerList = () => {
   return (
     <div>
       <h4>Customer List</h4>
-      {customers.map((launch) => (
-        <ul key={launch.id}>
+      {customers.map((customer) => (
+        <ul key={customer.id}>
           <li>
-            {launch.id} - {launch.name} - {launch.age}
+            {customer.id} - {customer.name} - {customer.age}
           </li>
         </ul>
       ))}
