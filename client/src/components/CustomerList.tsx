@@ -23,7 +23,7 @@ const CustomerList = () => {
   useEffect(() => {
     fetch("http://localhost:2000/graphql", requestOptions)
       .then((response) => response.json())
-    //   .then((data) => console.log(data.data.customers));
+      //   .then((data) => console.log(data.data.customers));
       .then((data) => setCustomers(data.data.customers));
   }, []);
 
@@ -33,7 +33,7 @@ const CustomerList = () => {
       {customers.map((customer) => (
         <ul key={customer.id}>
           <li>
-            {customer.id} - {customer.name} - {customer.age}
+            {customer.id} - {customer.name} - {customer.age} and more
           </li>
         </ul>
       ))}
